@@ -1,8 +1,9 @@
 import {StyleSheet} from 'react-native';
+import {colors} from '../styles/baseColors';
 
 export const styles = StyleSheet.create({
   calendarTile: {
-    backgroundColor: 'steelblue',
+    backgroundColor: colors.steelblue,
     width: '16.66%',
     height: '11%',
     borderColor: 'darkblue',
@@ -10,6 +11,12 @@ export const styles = StyleSheet.create({
   },
   date: {
     fontSize: 15,
+    fontWeight: '700',
+    color: '#1d3549',
+  },
+  price: {
+    color: '#FBEEA8',
+    fontSize: 13,
     fontWeight: '700',
   },
 });

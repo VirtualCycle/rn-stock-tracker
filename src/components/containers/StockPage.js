@@ -32,7 +32,7 @@ export class StockPage extends Component {
 }
 
 const styles = StyleSheet.create({
-  StockPage: {flex: 1, flexDirection: 'column', backgroundColor: 'green'},
+  StockPage: {flex: 1, flexDirection: 'column'},
 });
 
 export default StockPage;
