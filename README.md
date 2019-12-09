@@ -2,5 +2,7 @@
 A React Native app to show trends of a stock price over a month.
 
 ### Current progress
-![Alt text](/AppImages/AppImage1.jpeg?raw=true "Optional Title")
+ - App fetches data from airtable APIs and populates the calendar
+ 
+![Alt text](/AppImages/AppImage2.jpeg?raw=true "Optional Title")
 
