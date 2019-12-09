@@ -1,32 +1,22 @@
+import 'react-native-gesture-handler';
 import React, {Component} from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
-import Header from './components/layout/Header';
+import {StyleSheet, View, StatusBar} from 'react-native';
+// import Header from './components/layout/Header';
 import {colors} from './styles/baseColors';
+import AppNavigator from './Navigator';
 
 class App extends Component {
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <StatusBar barStyle="dark-content" backgroundColor="#bf4345" />
-        <SafeAreaView styles={styles.container}>
-          <Header />
-        </SafeAreaView>
+        <AppNavigator />
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: colors.white,
-  },
   container: {
     flex: 1,
   },
