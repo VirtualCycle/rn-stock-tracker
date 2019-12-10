@@ -5,6 +5,7 @@ import {colors} from '../../styles/baseColors';
 import {withNavigation} from 'react-navigation';
 import CustomTextInput from '../CustomTextInput';
 import {editStockData} from '../../DataHandler';
+import {showMessage} from 'react-native-flash-message';
 
 export class EditDayStockPage extends Component {
   state = {
@@ -22,16 +23,29 @@ export class EditDayStockPage extends Component {
       color: colors.white,
     },
   };
-  handleSubmit() {
-    editStockData(this.state.price, this.state.data);
-  }
+  handleSubmit = async () => {
+    try {
+      let res = await editStockData(this.state.price, this.state.data);
+      showMessage({
+        message: 'Success',
+        description: 'Stock Price Updated!',
+        type: 'success',
+      });
+      this.props.navigation.navigate('StockPage');
+    } catch (err) {
+      showMessage({
+        message: 'Error',
+        description: `Couldn't update Stock Price`,
+        type: 'danger',
+      });
+    }
+  };
   onChangePrice(text) {
     const cleanNumber = text.replace(/[^0-9]/g, '');
     this.setState({price: cleanNumber});
   }
   render() {
-    console.log(this.props.navigation.getParam('data'));
-    const {id, fields} = this.props.navigation.getParam('data');
+    const {fields} = this.props.navigation.getParam('data');
     return (
       <View style={styles.container}>
         <Text style={styles.date}> {`June ${fields.date}`} </Text>

@@ -1,9 +1,9 @@
 import 'react-native-gesture-handler';
 import React, {Component} from 'react';
 import {StyleSheet, View, StatusBar} from 'react-native';
-// import Header from './components/layout/Header';
 import {colors} from './styles/baseColors';
 import AppNavigator from './Navigator';
+import FlashMessage from 'react-native-flash-message';
 
 class App extends Component {
   render() {
@@ -11,6 +11,7 @@ class App extends Component {
       <View style={styles.container}>
         <StatusBar barStyle="dark-content" backgroundColor="#bf4345" />
         <AppNavigator />
+        <FlashMessage position="top" />
       </View>
     );
   }

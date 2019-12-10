@@ -3,7 +3,7 @@ import {colors} from './baseColors';
 
 export const styles = StyleSheet.create({
   calendar: {
-    flex: 1,
+    flex: 1.1,
     backgroundColor: 'lightblue',
     flexDirection: 'row',
     // justifyContent: 'space-evenly',
