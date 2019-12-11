@@ -31,7 +31,7 @@ export class EditDayStockPage extends Component {
         description: 'Stock Price Updated!',
         type: 'success',
       });
-      this.props.navigation.navigate('StockPage');
+      this.props.navigation.pop();
     } catch (err) {
       showMessage({
         message: 'Error',
