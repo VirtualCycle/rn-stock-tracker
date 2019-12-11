@@ -19,16 +19,19 @@ export class ReportBlock extends Component {
 
   maxProfit(prices, dates) {
     let profit = 0;
-
-    let buyDateIndex = null;
+    let cheapest = prices[0];
+    let buyDateIndex = 0;
     let sellDateIndex = null;
-    for (let i = 0; i < prices.length; i++) {
-      for (let j = i; j < prices.length; j++) {
-        if (prices[j] > prices[i] && prices[j] - prices[i] > profit) {
-          profit = prices[j] - prices[i];
-          buyDateIndex = i;
-          sellDateIndex = j;
-        }
+
+    for (let i = 1; i < prices.length; i++) {
+      if (prices[i] <= cheapest) {
+        cheapest = prices[i];
+        buyDateIndex = i;
+      }
+      let tempProfit = profit;
+      profit = Math.max(profit, prices[i] - cheapest);
+      if (tempProfit < profit) {
+        sellDateIndex = i;
       }
     }
     return {profit, min: dates[buyDateIndex], max: dates[sellDateIndex]};
@@ -53,7 +56,6 @@ export class ReportBlock extends Component {
   render() {
     const {prices, dates, filteredData} = this.transformData(this.props.data);
     const {max, min, profit} = this.maxProfit(prices, filteredData);
-
     const YContentInset = {top: 20, bottom: 20};
 
     return (
