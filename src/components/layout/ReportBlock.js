@@ -21,7 +21,7 @@ export class ReportBlock extends Component {
     let profit = 0;
     let cheapest = prices[0];
     let buyDateIndex = 0;
-    let sellDateIndex = null;
+    let sellDateIndex = 0;
 
     for (let i = 1; i < prices.length; i++) {
       if (prices[i] <= cheapest) {
