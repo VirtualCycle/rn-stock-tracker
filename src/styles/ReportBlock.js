@@ -3,7 +3,7 @@ import {colors} from '../styles/baseColors';
 
 export const styles = StyleSheet.create({
   container: {
-    flex: 0.9,
+    height: 380,
     backgroundColor: colors.lightblue,
   },
 });

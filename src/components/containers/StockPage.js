@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, StyleSheet, View} from 'react-native';
+import {ScrollView, StyleSheet, View} from 'react-native';
 import Header from '../layout/Header';
 import Calendar from '../layout/Calendar';
 import ReportBlock from '../layout/ReportBlock';
@@ -38,16 +38,18 @@ export class StockPage extends Component {
 
   render() {
     return (
-      <View style={styles.StockPage}>
-        <Calendar data={this.state.stockData} />
-        <ReportBlock data={this.state.stockData} />
-      </View>
+      <ScrollView>
+        <View style={styles.StockPage}>
+          <Calendar data={this.state.stockData} />
+          <ReportBlock data={this.state.stockData} />
+        </View>
+      </ScrollView>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  StockPage: {flex: 1, flexDirection: 'column'},
+  StockPage: {height: '100%'},
 });
 
 export default StockPage;

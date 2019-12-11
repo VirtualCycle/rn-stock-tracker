@@ -58,7 +58,7 @@ export class ReportBlock extends Component {
 
     return (
       <View style={styles.container}>
-        <Text style={{fontSize: 18, alignSelf: 'center'}}>
+        <Text style={{fontSize: 18, alignSelf: 'center', marginVertical: 20}}>
           {profit
             ? `Make profit of ₹${profit * 10} by buying 10 stocks`
             : 'No possible profit this month'}

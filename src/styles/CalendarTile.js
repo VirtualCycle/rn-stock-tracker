@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
   calendarTile: {
     backgroundColor: colors.steelblue,
     width: '16.66%',
-    height: '20%',
+    height: 85,
     borderColor: 'darkblue',
     borderWidth: 0.2,
   },
